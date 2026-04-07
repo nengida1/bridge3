@@ -32,7 +32,7 @@ contract Source is AccessControl {
 
 	function withdraw(address _token, address _recipient, uint256 _amount ) onlyRole(WARDEN_ROLE) public {
 		//YOUR CODE HERE
-    book success = ERC20(_token).transfer(_recipient, _amount);
+    bool success = ERC20(_token).transfer(_recipient, _amount);
     require(success, "transfer failed");
     emit withdrawal(_token, _recipient, _amount);
 	}
