@@ -34,7 +34,7 @@ contract Source is AccessControl {
 		//YOUR CODE HERE
     bool success = ERC20(_token).transfer(_recipient, _amount);
     require(success, "transfer failed");
-    emit withdrawal(_token, _recipient, _amount);
+    emit Withdrawal(_token, _recipient, _amount);
 	}
 
 	function registerToken(address _token) onlyRole(ADMIN_ROLE) public {
